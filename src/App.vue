@@ -1,18 +1,70 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="bg-gray-800 min-h-screen">
+    <div class="h-screen p-8 md:p-16 flex flex-col" ref="titleScreen">
+      <header class="bg-gray-500 p-8 text-center text-4xl md:text-6xl max-w-6xl">
+        <!-- Maybe turn into a footer progress toolbar that zooms in from the bottom -->
+        Disease. It hurts us all.
+      </header>
+      <section class="h-full max-w-4xl m-auto flex-grow">
+        <!-- Hero -->
+        <div class="text-white">
+          <p>
+            On March 11, 2020, COVID-19 was declared a pandemic by the World
+            Health Organization.
+          </p>
+          <p>Some regions were well-equipped to handle the incoming disaster. Some weren't.</p>
+          <p>
+            We know that to reduce impacts on health systems, we need to flatten
+            the curve, whether through social distancing or wearing face masks.
+          </p>
+          <p>
+            It's obvious that COVID-19 has impacted global affairs in more than
+            one way.
+          </p>
+          <p class="text-lg">But what isn't obvious about COVID-19?</p>
+        </div>
+      </section>
+      <a class="text-center text-3xl text-white font-bold p-4" href="#section1" v-on:click="scrollScreen" ref="callToAction">
+        Let's find out.
+        <span class="material-icons text-5xl">arrow_drop_down</span>
+      </a>
+    </div>
+    <title-section id="section1">
+      <template slot="title">
+        Test
+      </template>
+      <template slot="subtitle">
+        Subtitle
+      </template>
+    </title-section>
+    <div class="sticky bottom-0 h-14">
+      Test
+    </div>
+    <context-viz-section>
+      <template slot="title">
+      </template>
+      <template>
+      </template>
+    </context-viz-section>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TitleSection from './components/TitleSection.vue'
+import ContextVizSection from './components/ContextVizSection.vue'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    'title-section': TitleSection,
+    'context-viz-section': ContextVizSection,
+  },
+  methods: {
+    scrollScreen() {
+      const container = this.$refs.titleScreen
+      container.scrollTop = container.scrollHeight
+    },
+  },
 }
 </script>
 
