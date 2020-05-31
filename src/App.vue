@@ -33,39 +33,66 @@
     </div>
     <title-section id="section1">
       <template slot="title">
-        Test
+        This is a title describing some aspect of the crisis
       </template>
       <template slot="subtitle">
-        Subtitle
+        Now 
+      </template>
+      <template slot="default">
       </template>
     </title-section>
-    <div class="sticky bottom-0 h-14">
-      Test
+    <div class="sticky bottom-0 h-14 p-4 text-white">
+      <div class="font-bold text-lg">
+        <!-- Section number -->
+        {{ currentSection }} of {{ totalSections }}
+      </div>
     </div>
+    <big-statement>
+      Some sort of quote or statement that uses a lot of space to create visual
+      interest and emphasis.
+    </big-statement>
     <context-viz-section>
       <template slot="title">
+        COVID-19 City Environments
       </template>
-      <template>
+      <template slot="context">
+        Somthing
+      </template>
+      <template slot="visual">
+        Some kind of graph.
       </template>
     </context-viz-section>
-
+    <big-statement>
+      How did we get here?
+    </big-statement>
+    <big-statement>
+      What do we do now?
+    </big-statement>
   </div>
 </template>
 
 <script>
 import TitleSection from './components/TitleSection.vue'
 import ContextVizSection from './components/ContextVizSection.vue'
+import BigStatementSection from './components/templates/BigStatement.vue'
 
 export default {
   components: {
     'title-section': TitleSection,
     'context-viz-section': ContextVizSection,
+    'big-statement': BigStatementSection,
   },
   methods: {
     scrollScreen() {
       const container = this.$refs.titleScreen
       container.scrollTop = container.scrollHeight
     },
+  },
+  data() {
+    return {
+      currentSection: 0,
+      totalSections: 3,
+    }
   },
 }
 </script>
