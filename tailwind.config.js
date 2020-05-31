@@ -1,5 +1,11 @@
 module.exports = {
-  theme: {},
+  theme: {
+    fontFamily: { 
+      'display': ['Play', 'sans-serif'],
+      'sans': ['Overpass', 'sans-serif'],
+      'serif': ['"EB Garamond"', 'serif'],
+    }
+  },
   variants: {},
   plugins: [],
   purge: {
