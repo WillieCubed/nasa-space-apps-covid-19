@@ -56,10 +56,23 @@
         COVID-19 City Environments
       </template>
       <template slot="context">
-        Somthing
+        <p class="mb-4">
+          Unsurprisingly, there's a pretty big link between urban density and rate
+          of COVID-19 infections.
+        </p>
+        <p class="mb-4">
+          However, in some countries, the effect is more pronounced.
+        </p>
       </template>
       <template slot="visual">
-        Some kind of graph.
+        <GmapMap ref="map-section1"
+          :center="{lat:0, lng:0}"
+          :zoom="4"
+          map-type-id="terrain"
+          class="max-w-full"
+          style="width: 60vw; height: 80vh;"
+        >
+        </GmapMap>
       </template>
     </context-viz-section>
     <big-statement>
