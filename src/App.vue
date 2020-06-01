@@ -110,9 +110,13 @@
           relationship, which data from both agencies on earth and satellites
           in space demonstrates. 
         </p>
+        <a class="text-center text-3xl text-white font-bold p-4 mt-56 mx-auto" href="#humidityTitle" ref="callToAction">
+        Keep reading.
+        <span class="material-icons text-5xl">arrow_drop_down</span>
+        </a>
       </template>
     </title-section>
-    <big-statement>
+    <big-statement id="humidityTitle">
       Does humidity help the virus spread?
     </big-statement>
     <context-viz-section id="section4" ref="section4">
@@ -177,7 +181,7 @@
         </div>
       </template>
     </context-viz-section>
-    <two-graphs>
+    <!-- <two-graphs>
       <template slot="col-1">
         <div class="bg-gray-700">
 
@@ -191,11 +195,11 @@
       <template slot="description">
         <p>Test description</p>
       </template>
-    </two-graphs>
+    </two-graphs> -->
     <big-statement>
       What do we do now?
     </big-statement>
-    <three-column>
+    <!-- <three-column>
       <template slot="col-1">
         <div class="action-col">
           <h1 class="text-center text-bold text-3xl py-4">
@@ -226,7 +230,7 @@
           </p>
         </div>
       </template>
-    </three-column>
+    </three-column> -->
     <section id="logo" class="h-screen flex">
       <div class="m-auto">
         <img src="./assets/cinquanauts_logo.png" class="mx-auto logo md:max-w-sm md:max-h-sm">
@@ -241,8 +245,8 @@ import { gmapApi } from 'gmap-vue'
 import TitleSection from './components/TitleSection.vue'
 import ContextVizSection from './components/ContextVizSection.vue'
 import BigStatementSection from './components/templates/BigStatement.vue'
-import ThreeColumn from './components/templates/ThreeColumn.vue'
-import TwoGraphs from './components/templates/TwoGraphs.vue'
+// import ThreeColumn from './components/templates/ThreeColumn.vue'
+// import TwoGraphs from './components/templates/TwoGraphs.vue'
 
 // Colors
 // dark blue: #241849
@@ -256,8 +260,8 @@ export default {
     'title-section': TitleSection,
     'context-viz-section': ContextVizSection,
     'big-statement': BigStatementSection,
-    'three-column': ThreeColumn,
-    'two-graphs': TwoGraphs,
+    // 'three-column': ThreeColumn,
+    // 'two-graphs': TwoGraphs,
   },
   computed: {
     google: gmapApi,
